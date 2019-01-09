@@ -1,0 +1,14 @@
+{
+    "name": "w3public/contact_form",
+    "description": "This a Contact Form for contacting with admin and the admin will get an email that will also be saved into database",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bablu Ahmed",
+            "email": "bablukpik@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
