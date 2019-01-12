@@ -15,22 +15,29 @@ class CreateContactFormsTable extends Migration
     {
         Schema::create('contact_forms', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('first_name',30);
-            $table->string('middle_name',30);
-            $table->string('last_name',30);
-            $table->string('full_name',50);
-            $table->string('mobile',20);
-            $table->string('email',50);
-            $table->string('nid',50);
-            $table->string('driving_license',100);
-            $table->string('passport',100);
-            $table->string('designation',100);
-            $table->string('country',100);
-            $table->text('present_address');
-            $table->text('permanent_address');
-            $table->string('subject',200);
-            $table->string('query',200);
-            $table->text('description');
+            $table->string('first_name',30)->nullable();
+            $table->string('middle_name',30)->nullable();
+            $table->string('last_name',30)->nullable();
+            $table->string('full_name',50)->nullable();
+            $table->string('mobile',20)->nullable();
+            $table->string('tel',20)->nullable();
+            $table->string('email',50)->nullable();
+            $table->string('url',50)->nullable();
+            $table->string('nid',50)->nullable();
+            $table->string('country',100)->nullable();
+            $table->string('driving_license',100)->nullable();
+            $table->string('passport',100)->nullable();
+            $table->string('designation',100)->nullable();
+            $table->text('present_address')->nullable();
+            $table->text('permanent_address')->nullable();
+            $table->string('subject',200)->nullable();
+            $table->text('description')->nullable();
+            $table->dateTime('start_date')->nullable();
+            $table->dateTime('end_date')->nullable();
+            $table->string('drop_down')->nullable();
+            $table->string('check_box')->nullable();
+            $table->string('radio')->nullable();
+            $table->string('attachment')->nullable();
             $table->timestamps();
         });
     }
