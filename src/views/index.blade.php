@@ -13,11 +13,35 @@
 </head>
 <body>
 <div class="container">
-
-    <h2 class="text-center">Contact Form</h2>
     <div class="row justify-content-center">
         <div class="col-12 col-md-8 col-lg-6 pb-5">
-            <form action="{{route('contact-form')}}" method="post">
+            <!--flash messages-->
+            @foreach (['success', 'danger', 'warning', 'info'] as $key => $msg)
+                @if(session($msg))
+                    <div class="flash-messages">
+                        <div class="alert alert-{{ $msg }} alert-dismissible">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            <p>{!! session($msg) !!}</p>
+                        </div>
+                    </div>
+                @endif
+            @endforeach
+            <!--/flash messages-->
+            <!--validation error messages-->
+            @if(count($errors) > 0)
+                @foreach($errors->all() as $error)
+                    <div class="error-messages">
+                        <div class="alert alert-danger alert-dismissible">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            <p>{{$error}}</p>
+                        </div>
+                    </div>
+                @endforeach
+            @endif
+            <!--/validation error messages-->
+
+            <h2 class="text-center">Contact Form</h2>
+            <form action="{{route('contact-us')}}" method="post">
                 @csrf
                 <div class="card border-primary rounded-0">
                     <div class="card-header p-0">

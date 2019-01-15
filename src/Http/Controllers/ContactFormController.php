@@ -4,7 +4,6 @@ namespace W3public\ContactForm\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use W3public\ContactForm\Models\ContactForm;
-
 class ContactFormController extends Controller
 {
     public function index()
@@ -37,6 +36,6 @@ class ContactFormController extends Controller
         $contact_form->save();
 
         //Return back
-        return back()->with('success','Record inserted successfully');
+        return back()->with('success','<strong>Success!</strong> Record inserted successfully');
     }
 }
